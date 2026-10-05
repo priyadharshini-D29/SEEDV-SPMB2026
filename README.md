@@ -51,7 +51,7 @@ Run the scripts from the repository root. Each writes into `results/`.
 | Table 1 row 1: segment-random split, and the training-size control (Sec. III-A) | `scripts/dcca_reconcile.py`, `scripts/methodology.py` | `results/workstation/RESULTS_dcca_reconciled.md`, `RESULTS_methodology.md` |
 | Table 1 rows 2-3: held-out trials with whole-session vs training-only normalization | `scripts/trialindep_inductive.py` | `results/workstation/RESULTS_trialindep_inductive.md` |
 | Table 3: 12-model benchmark (fixed, untuned settings) | `scripts/bench_inductive.py` | `results/workstation/RESULTS_benchmark_inductive.md` |
-| Sec. III-C: DCCA reproduction | `scripts/dcca_inductive.py`, `scripts/dcca_multiseed.py` | `results/workstation/RESULTS_dcca_*.md` |
+| Sec. III-C: DCCA reproduction | `scripts/dcca_inductive.py` | `results/workstation/RESULTS_dcca_inductive.md` |
 | Sec. III-D: nested tuning and late fusion | `scripts/spmb_inductive_boost.py` | `results/cloud_instance/spmb_boost_results/` |
 | Sec. III-D: classifiers on per-trial summary features | `scripts/spmb_direct_trial_models.py` | `results/cloud_instance/spmb_trial_results/` |
 | Table 1 rows 4-6, Fig. 2, Sec. III-E: LOSO by normalization access | `scripts/loso_final.py` (also `cross_subject_audit.py`, `online_norm.py`) | `results/workstation/RESULTS_loso_*.md`, `loso_final_arrays.npz` |
@@ -79,6 +79,29 @@ were trained with a CPU-only PyTorch build.
 The rerun of the modality ablation on the Intel machine reproduces the primary 69.69% exactly
 (`results/revision/modality/`).
 
+## Reproduction check
+
+All scripts were re-run from a fresh clone of this repository in a clean environment built from
+`requirements.txt` (Python 3.12.10, Windows 11, Intel Core Ultra 9 285K, CPU only) and compared with the
+published result files.
+
+| Result | Published | Re-run |
+|---|---|---|
+| Modality ablation (Table 2), all metrics and paired tests | 69.69 / 65.30 / 51.96 | identical |
+| Nested tuning, late fusion, per-trial models (Sec. III-D) | 69.66 / 65.87 / 63.75 / 67.64 | identical |
+| Segment-random and whole-session normalization (Table 1) | 100.00 / 75.49 | identical |
+| Benchmark (Table 3), 11 of 12 models including all neural comparators | as in Table 3 | identical |
+| Benchmark, LDA | 36.29 | 36.35 |
+| DCCA reproduction | 63.86 | 63.71 |
+| LOSO causal-online and transductive | 73.59 / 74.30 | identical |
+| LOSO strictly inductive baseline | 43.19 | 43.03 |
+| Channel screening, five fold seeds, permutation importance, electrode stability, per-class metrics | as in the paper | identical |
+
+The three small differences come from floating-point behaviour that depends on the CPU and BLAS library: the
+LDA SVD solver, DCCA training, and the inductive LOSO logistic regression, which stops at its 500-iteration
+limit. None changes a conclusion. The paper reports the original values; the re-run files are in
+`results/reproduction_check/`. Timings differ between machines by design.
+
 ## Notes
 
 - Comparator models use fixed settings chosen before evaluation and were not tuned per model; the benchmark
@@ -86,8 +109,8 @@ The rerun of the modality ablation on the Intel machine reproduces the primary 6
 - "Causal" refers only to temporal information access (predict, then update); no causal inference is implied.
 - Part [B] of `RESULTS_methodology.md` screens channels with whole-session normalization (an earlier
   diagnostic). The channel numbers in the paper are the training-only ones in `RESULTS_inductive_fast.md`.
-- `RESULTS_dcca_reconciled.md` and `RESULTS_dcca_multiseed.md` also use whole-session normalization (the 75.49%
-  setting); the leakage-safe DCCA comparison in the paper is `RESULTS_dcca_inductive.md`.
+- `RESULTS_dcca_reconciled.md` also uses whole-session normalization (the 75.49% setting); the leakage-safe DCCA
+  comparison in the paper is `RESULTS_dcca_inductive.md`.
 - Per-trial prediction dumps and console logs are not included.
 - Software: Python 3.12-3.13, NumPy 2.4.2, SciPy 1.17.1, scikit-learn 1.8.0, PyTorch 2.11.0 (CPU), Matplotlib 3.10.
 

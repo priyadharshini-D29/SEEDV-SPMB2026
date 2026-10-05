@@ -35,10 +35,9 @@ gs = fig.add_gridspec(2, 2, height_ratios=[1, 0.9], width_ratios=[1, 1.2], left=
 # (A) access bars; values and SDs from RESULTS_loso_final.md (common last-50% window)
 ax = fig.add_subplot(gs[0, 0])
 labels = ["Inductive", "Calib 20%\n(chrono)", "Calib 20%\n(repr.)", "Causal\nonline", "Transductive"]
-vals = [43.19, 47.78, 64.77, 73.59, 74.30]
-sds = [9.7, 7.8, 9.4, 9.4, 8.2]
-assert abs(vals[0] - ind.mean()) < 0.01 and abs(vals[3] - on.mean()) < 0.01 and abs(vals[4] - tr.mean()) < 0.01
-assert abs(sds[0] - ind.std()) < 0.06 and abs(sds[3] - on.std()) < 0.06 and abs(sds[4] - tr.std()) < 0.06
+# the three main conditions come from the arrays; the two calibration diagnostics from RESULTS_loso_final.md
+vals = [ind.mean(), 47.78, 64.77, on.mean(), tr.mean()]
+sds = [ind.std(), 7.8, 9.4, on.std(), tr.std()]
 ax.bar(range(5), vals, 0.62, yerr=sds, color=[GREY, LIGHT, LIGHT, BLUE, ORANGE], zorder=3,
        error_kw={"elinewidth": 0.8, "capsize": 2, "ecolor": INK})
 for i, v in enumerate(vals):

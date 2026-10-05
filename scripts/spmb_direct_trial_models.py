@@ -145,7 +145,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--data-root",
         type=Path,
-        default=here.parent / "data",
+        default=Path(os.environ.get("SEEDV_DATA", here.parent / "data")),
         help="Directory containing EEG_DE_features and Eye_movement_features.",
     )
     parser.add_argument(
