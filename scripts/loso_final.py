@@ -139,7 +139,8 @@ comps=[compare(R["online_prereg"],R["inductive"],"online vs inductive"),
        compare(R["online_prereg"],R["transductive"],"online vs transductive")]
 # Holm across the 4 (use Wilcoxon p)
 ps=sorted([(c["pw"],c["name"]) for c in comps]); mH={}
-for rank,(p,nm) in enumerate(ps): mH[nm]=min(1.0,p*(len(ps)-rank))
+_run=0.0
+for rank,(p,nm) in enumerate(ps): _run=max(_run,min(1.0,p*(len(ps)-rank))); mH[nm]=_run   # step-down with running maximum
 
 L=["=== FINAL LOSO by normalisation access (16 subjects, COMMON last-50% window) ==="]
 def ln(n,a): return f"{n:26s}: {a.mean()*100:5.2f} +/- {a.std()*100:4.1f}"

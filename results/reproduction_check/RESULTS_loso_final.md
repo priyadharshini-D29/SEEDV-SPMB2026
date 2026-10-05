@@ -10,7 +10,7 @@ Online full-session (n0=20): 69.27 +/-  8.2
 Nested n0 picks across 16 folds: [20, 50, 50, 50, 50, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20]  (mode=20)
 
 Paired comparisons (online n0=20, last-50% window; Holm on Wilcoxon):
-  online vs inductive   : diff +30.56 pts | 95%CI [+24.81,+36.32] | t p=3.99e-08 | Wilcoxon p=3.05e-05 | Holm p=9.16e-05 | improved 16/16
+  online vs inductive   : diff +30.56 pts | 95%CI [+24.81,+36.32] | t p=3.99e-08 | Wilcoxon p=3.05e-05 | Holm p=1.22e-04 | improved 16/16
   online vs chrono-cal20: diff +25.81 pts | 95%CI [+20.38,+31.93] | t p=4.33e-07 | Wilcoxon p=3.05e-05 | Holm p=1.22e-04 | improved 16/16
   online vs repr-cal20  : diff +8.82 pts | 95%CI [+5.96,+11.47] | t p=2.46e-05 | Wilcoxon p=2.14e-04 | Holm p=4.27e-04 | improved 14/16
   online vs transductive: diff -0.71 pts | 95%CI [-3.35,+2.09] | t p=6.26e-01 | Wilcoxon p=4.33e-01 | Holm p=4.33e-01 | improved 6/16
@@ -35,3 +35,5 @@ Per-subject (inductive / online n0=20 last-50% / transductive):
   S14:  30.0 /  77.5 /  76.6
   S15:  48.0 /  73.7 /  75.0
   S16:  40.0 /  74.3 /  69.8
+
+Note (2026-10-05): the Holm column was recomputed with the step-down running maximum; an earlier version of loso_final.py omitted it, which gave 9.16e-05 for one of two tied comparisons. Raw p-values are unchanged.

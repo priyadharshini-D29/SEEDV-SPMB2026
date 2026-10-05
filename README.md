@@ -56,7 +56,7 @@ Run the scripts from the repository root. Each writes into `results/`.
 | Sec. III-D: classifiers on per-trial summary features | `scripts/spmb_direct_trial_models.py` | `results/cloud_instance/spmb_trial_results/` |
 | Table 1 rows 4-6, Fig. 2, Sec. III-E: LOSO by normalization access | `scripts/loso_final.py` (also `cross_subject_audit.py`, `online_norm.py`) | `results/workstation/RESULTS_loso_*.md`, `loso_final_arrays.npz` |
 | Sec. III-F: channel screening, five fold seeds, permutation importance | `scripts/inductive_fast.py`, `scripts/perm_compare.py` | `results/workstation/RESULTS_inductive_fast.md`, `RESULTS_perm_compare.md` |
-| Fig. 3B, Fig. 4: electrode-selection stability, per-class metrics, class balance | `scripts/revision_analyses.py` | `results/revision/revision_analyses/` |
+| Fig. 3B, Fig. 4: electrode-selection stability, per-class metrics, class balance | `scripts/revision_analyses.py` | `results/revision/revision_analyses/` (all 48 fold-specific 10-channel selections: `sel10_fold_selections.csv`; selection frequency of all 62 electrodes: `sel10_selection_frequency.csv`) |
 | Figures 1-4 | `scripts/make_fig1.py`, `make_fig2.py`, `make_fig3_fig4.py` | `figures/` |
 
 The figure scripts need only the files in `results/`, so they run without SEED-V.
@@ -98,14 +98,32 @@ published result files.
 | Channel screening, five fold seeds, permutation importance, electrode stability, per-class metrics | as in the paper | identical |
 
 The three small differences come from floating-point behaviour that depends on the CPU and BLAS library: the
-LDA SVD solver, DCCA training, and the inductive LOSO logistic regression, which stops at its 500-iteration
-limit. None changes a conclusion. The paper reports the original values; the re-run files are in
-`results/reproduction_check/`. Timings differ between machines by design.
+LDA SVD solver, DCCA training, and the inductive LOSO logistic regression. None changes a conclusion. The paper
+reports the original values; the re-run files are in `results/reproduction_check/`. Timings differ between
+machines by design.
+
+Convergence of the LOSO classifiers was checked separately (`scripts/loso_convergence_check.py`,
+`results/reproduction_check/RESULTS_loso_convergence.md`). No fold reaches the 500-iteration limit: the strictly
+inductive classifier converges in about 315 iterations and the session-aligned classifier in about 67, and
+raising the limit to 20,000 changes no participant's accuracy. The 43.19 versus 43.03 difference is therefore a
+cross-machine numerical difference, not an optimization artefact.
+
+Correction (5 October 2026): `loso_final.py` originally applied the Holm multipliers without the step-down
+running maximum, so one of two tied comparisons was reported as 9.16e-05. The corrected Holm-adjusted Wilcoxon
+p-value for causal-online versus inductive is 1.22e-04, as stated in the paper. The script and the saved
+summaries have been corrected; raw p-values and all accuracies are unchanged.
 
 ## Notes
 
 - Comparator models use fixed settings chosen before evaluation and were not tuned per model; the benchmark
   ranking should be read with that in mind.
+- The DCCA baseline is a simplified reimplementation, not a faithful reproduction of the published model: it
+  differs in network size, output dimension, regularization and downstream classifier.
+- Table 2 metrics are computed from pooled out-of-fold predictions; the benchmark file reports fold-averaged
+  accuracy, balanced accuracy and F1, which should not be interchanged with the pooled values.
+- Channels are ranked by the ANOVA F score averaged over the five bands of each electrode.
+- The reported prediction time is batched classifier time divided by the number of segments. It is not a
+  single-segment streaming latency and excludes feature extraction and normalization.
 - "Causal" refers only to temporal information access (predict, then update); no causal inference is implied.
 - Part [B] of `RESULTS_methodology.md` screens channels with whole-session normalization (an earlier
   diagnostic). The channel numbers in the paper are the training-only ones in `RESULTS_inductive_fast.md`.
