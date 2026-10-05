@@ -1,0 +1,35 @@
+{
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.2",
+    "scipy": "1.17.1",
+    "scikit_learn": "1.8.0",
+    "seed": 0,
+    "thread_limits": {
+      "OMP_NUM_THREADS": "8",
+      "OPENBLAS_NUM_THREADS": "8",
+      "MKL_NUM_THREADS": "8"
+    }
+  },
+  "modalities": {
+    "EEG-only": {
+      "n_features": 310,
+      "parameters": 1555,
+      "median_fit_seconds_per_fold": 0.010697100020479411,
+      "median_prediction_microseconds_per_sample": 0.9267479995692341
+    },
+    "Eye-only": {
+      "n_features": 33,
+      "parameters": 170,
+      "median_fit_seconds_per_fold": 0.006412900052964687,
+      "median_prediction_microseconds_per_sample": 0.09187836149598205
+    },
+    "EEG+Eye": {
+      "n_features": 343,
+      "parameters": 1720,
+      "median_fit_seconds_per_fold": 0.009506349975708872,
+      "median_prediction_microseconds_per_sample": 1.014392314285292
+    }
+  }
+}

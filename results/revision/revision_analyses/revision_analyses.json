@@ -1,0 +1,523 @@
+{
+ "class_balance": {
+  "segments_total": 29168,
+  "segments_per_class": {
+   "Disgust": 4896,
+   "Fear": 5968,
+   "Sad": 7616,
+   "Neutral": 5872,
+   "Happy": 4816
+  },
+  "trials_per_class_per_subject": {
+   "Disgust": 9,
+   "Fear": 9,
+   "Sad": 9,
+   "Neutral": 9,
+   "Happy": 9
+  },
+  "segments_per_trial_min_median_max": [
+   13,
+   41.0,
+   74
+  ],
+  "segments_per_subject_min_max": [
+   1823,
+   1823
+  ],
+  "trials_with_length_mismatch": 0,
+  "mismatch_examples": [],
+  "max_segments_dropped_in_a_trial": 0,
+  "total_segments_dropped": 0
+ },
+ "per_subject_segments": {
+  "1": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  },
+  "2": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  },
+  "3": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  },
+  "4": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  },
+  "5": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  },
+  "6": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  },
+  "7": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  },
+  "8": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  },
+  "9": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  },
+  "10": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  },
+  "11": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  },
+  "12": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  },
+  "13": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  },
+  "14": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  },
+  "15": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  },
+  "16": {
+   "Disgust": 306,
+   "Fear": 373,
+   "Sad": 476,
+   "Neutral": 367,
+   "Happy": 301,
+   "trials_per_class": {
+    "Disgust": 9,
+    "Fear": 9,
+    "Sad": 9,
+    "Neutral": 9,
+    "Happy": 9
+   }
+  }
+ },
+ "channel_selection": {
+  "n_folds": 48,
+  "accuracy_pct": {
+   "5": 59.7,
+   "10": 64.74,
+   "15": 65.84,
+   "20": 67.26,
+   "31": 68.87,
+   "62": 69.69
+  },
+  "top10_participants_with_channel_in_>=2of3_folds": {
+   "T8": 9,
+   "T7": 8,
+   "FT7": 7,
+   "FC5": 6,
+   "FT8": 6,
+   "C6": 6,
+   "TP8": 5,
+   "FC6": 4,
+   "PO4": 4,
+   "PO6": 4,
+   "CP5": 3,
+   "P4": 3,
+   "TP7": 3,
+   "P7": 3,
+   "P2": 3
+  },
+  "jaccard_within_participant": 0.313,
+  "jaccard_across_participants": 0.128,
+  "top5_by_selection_frequency": [
+   [
+    "T8",
+    21,
+    43.8
+   ],
+   [
+    "T7",
+    16,
+    33.3
+   ],
+   [
+    "FT8",
+    11,
+    22.9
+   ],
+   [
+    "TP8",
+    11,
+    22.9
+   ],
+   [
+    "FT7",
+    10,
+    20.8
+   ],
+   [
+    "FC5",
+    9,
+    18.8
+   ],
+   [
+    "TP7",
+    8,
+    16.7
+   ],
+   [
+    "P7",
+    7,
+    14.6
+   ],
+   [
+    "PO4",
+    7,
+    14.6
+   ],
+   [
+    "PO6",
+    7,
+    14.6
+   ],
+   [
+    "F8",
+    6,
+    12.5
+   ],
+   [
+    "C5",
+    6,
+    12.5
+   ],
+   [
+    "P6",
+    6,
+    12.5
+   ],
+   [
+    "FPZ",
+    5,
+    10.4
+   ],
+   [
+    "FP2",
+    5,
+    10.4
+   ]
+  ],
+  "top5_distinct_channels_ever_selected": 56,
+  "top5_channels_selected_in_>=50pct_folds": [],
+  "top10_by_selection_frequency": [
+   [
+    "T8",
+    25,
+    52.1
+   ],
+   [
+    "T7",
+    23,
+    47.9
+   ],
+   [
+    "FT8",
+    21,
+    43.8
+   ],
+   [
+    "FT7",
+    19,
+    39.6
+   ],
+   [
+    "C6",
+    17,
+    35.4
+   ],
+   [
+    "FC5",
+    15,
+    31.2
+   ],
+   [
+    "TP8",
+    15,
+    31.2
+   ],
+   [
+    "PO4",
+    14,
+    29.2
+   ],
+   [
+    "FC6",
+    13,
+    27.1
+   ],
+   [
+    "TP7",
+    13,
+    27.1
+   ],
+   [
+    "P6",
+    12,
+    25.0
+   ],
+   [
+    "F8",
+    10,
+    20.8
+   ],
+   [
+    "C5",
+    10,
+    20.8
+   ],
+   [
+    "P4",
+    10,
+    20.8
+   ],
+   [
+    "P8",
+    10,
+    20.8
+   ]
+  ],
+  "top10_distinct_channels_ever_selected": 62,
+  "top10_channels_selected_in_>=50pct_folds": [
+   "T8"
+  ]
+ },
+ "per_class_fusion": {
+  "Disgust": {
+   "precision": 66.7,
+   "recall": 60.8,
+   "specificity": 93.9,
+   "f1": 63.6,
+   "support": 4896
+  },
+  "Fear": {
+   "precision": 75.4,
+   "recall": 82.9,
+   "specificity": 93.0,
+   "f1": 79.0,
+   "support": 5968
+  },
+  "Sad": {
+   "precision": 67.3,
+   "recall": 59.5,
+   "specificity": 89.8,
+   "f1": 63.2,
+   "support": 7616
+  },
+  "Neutral": {
+   "precision": 69.8,
+   "recall": 71.6,
+   "specificity": 92.2,
+   "f1": 70.7,
+   "support": 5872
+  },
+  "Happy": {
+   "precision": 68.1,
+   "recall": 76.1,
+   "specificity": 93.0,
+   "f1": 71.9,
+   "support": 4816
+  }
+ },
+ "confusion_rownorm_pct": [
+  [
+   60.8,
+   7.8,
+   10.3,
+   8.5,
+   12.6
+  ],
+  [
+   4.7,
+   82.9,
+   9.0,
+   1.4,
+   2.0
+  ],
+  [
+   6.4,
+   11.7,
+   59.5,
+   15.2,
+   7.2
+  ],
+  [
+   4.7,
+   3.1,
+   13.2,
+   71.6,
+   7.4
+  ],
+  [
+   9.1,
+   3.4,
+   8.0,
+   3.5,
+   76.1
+  ]
+ ],
+ "pooled_accuracy_check_pct": 69.69
+}

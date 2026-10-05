@@ -1,0 +1,9 @@
+# SEED-V is licensed data: never commit it
+data/*
+!data/README.md
+*.npz
+!results/workstation/loso_final_arrays.npz
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
